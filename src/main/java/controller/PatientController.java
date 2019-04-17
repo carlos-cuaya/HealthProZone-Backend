@@ -6,18 +6,14 @@ import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import persistence.Patient;
-import services.PatientService;
+import services.PatientContract;
 
 @RestController
 @RequestMapping("/patients")
 public class PatientController {
 
 	@Autowired
-	private final PatientService patientService;
-
-	public PatientController(PatientService patientService) {
-		this.patientService = patientService;
-	}
+	private PatientContract patientService;
 
 	@GetMapping
 	public Iterable<Patient> list() {
