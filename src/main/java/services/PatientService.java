@@ -24,8 +24,9 @@ public class PatientService implements PatientContract {
 		return patientRepository.save(pacient);
 	}
 
-	public Optional<Patient> find(Long id){
-		return patientRepository.findById(id);
+	public Patient getById(Long id){
+		Optional<Patient> optionalPatient = patientRepository.findById(id);
+		return optionalPatient.get();
 	}
 
 }

@@ -1,6 +1,5 @@
 package services;
 
-import java.util.Optional;
 import persistence.Patient;
 
 public interface PatientContract {
@@ -9,6 +8,6 @@ public interface PatientContract {
 
 	Patient create(Patient pacient);
 
-	Optional<Patient> find(Long id);
+	Patient getById(Long id);
 
 }
