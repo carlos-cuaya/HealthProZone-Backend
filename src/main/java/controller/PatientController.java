@@ -22,16 +22,19 @@ public class PatientController {
 	@Autowired
 	private RecordingContract recordingService;
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/patients")
 	public Iterable<Patient> list() {
 		return patientService.findAll();
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/recording")
 	public Recording insertRecording(@RequestBody Recording recording) {
 		return recordingService.create(recording);
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/recording/{patientId}")
 	public Patient getRecordingsByIdPatient(@PathVariable(value = "patientId") long patientId) {
 		return patientService.getById(patientId);
